@@ -2,9 +2,6 @@
 
 This project was done for a class assignment at SUTD for Machine Learning. io_data.py was provided for me as well as the image data in .jpg and .txt format. The rest of the code and implementation was written by me. Start by initializing the env by running ``python3 -m venv env`` then run ``source env/bin/activate`` then run ``pip install -r requirements.txt``. Then either run as a Jupyter Notebook with the env kernel or run ``python3 main.py``. The output will be the segmented images.
 
-## Formulas
-
-$$\sum$$
 ## Implementation
 
 My implementation use the given read_data() function to collect the LAB color values for ach pixel. It is then converted to a numpy array of ${n}$ by IdI dimensions. ${n}$ being the number of pixels in the image and ${d}$ being 3 for each of the LAB values. I then initialize my weights, mean, and covariances with the kmeanInitialization() function. This function uses the one iteration of k means to Cluster each of the points. From there the weights are initialized by $\frac{n_k}{n}$ for each value of ${k}$ where ${k}$ is 2 for the number of objects. In this case background and subject. The mean is initialized by taking the average of the individual ${L}$, ${A}$, and ${B}$ values ofr each cluster. The covariance is initialized the same way with the variance formula. 
